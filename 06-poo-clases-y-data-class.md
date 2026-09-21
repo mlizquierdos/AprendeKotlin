@@ -99,6 +99,11 @@ println(ana === Alumno("Ana", 8.5, 2))     // false: distinta referencia
 > y los cambios se expresan con `.copy()`. Así el estado de la interfaz es siempre
 > predecible: nadie puede modificar un objeto "por debajo".
 
+> 📄 Antes de seguir, repasad [Diferencia entre val y var](val-vs-var.md): ahí se explica
+> con detalle que `val` impide reasignar la referencia, pero no convierte el objeto en
+> inmutable (por ejemplo, una `val lista = mutableListOf(...)` se puede seguir modificando).
+> Esa distinción es la que hace necesario el patrón `copy()` que acabáis de ver.
+
 ## 6.6 Comparación rápida con Java
 
 | Java | Kotlin |

@@ -12,6 +12,9 @@ contador++
 **Norma del módulo: usad `val` siempre por defecto.** Sólo cambiad a `var` cuando el compilador
 os obligue. La inmutabilidad reduce errores y es imprescindible al trabajar con concurrencia (unidad 09).
 
+> 📄 Material complementario: [Diferencia entre val y var](val-vs-var.md), con ejemplos adicionales
+> (arrays, comparación con Java, y por qué `val` no implica que el objeto sea inmutable).
+
 ## 2.2 Inferencia y tipos básicos
 
 ```kotlin
