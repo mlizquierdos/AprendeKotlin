@@ -1,5 +1,21 @@
 # 07 · Herencia, interfaces, `object` y `sealed class`
 
+## El mapa: cinco herramientas, cinco preguntas
+
+Hasta ahora habéis creado clases sueltas. Un programa real tiene muchas clases **relacionadas entre sí**. Kotlin ofrece varias herramientas para ello, y cada una responde a una pregunta distinta:
+
+| Si te preguntas… | La herramienta es… | Ejemplo |
+|---|---|---|
+| «X **es un** tipo especial de Y» | Herencia (`open class`) | Un `Alumno` *es una* `Persona` |
+| «Y es una idea incompleta, solo tiene sentido si se concreta» | Clase abstracta (`abstract class`) | No existe una `Figura` a secas, sí un `Circulo` |
+| «X **sabe hacer** esto» (da igual qué *es*) | Interfaz (`interface`) | Una `Cancion` y un `Video` *saben* reproducirse |
+| «De esto solo debe haber **uno**» o «esto es de la clase, no de cada objeto» | `object` / `companion object` | La configuración de la app |
+| «Solo existen **estas** opciones y ninguna más» | `enum class` / `sealed class` | Estado de una pantalla: cargando, con datos, con error |
+
+Volved a esta tabla al terminar la unidad: si la entendéis, habéis entendido la unidad.
+
+---
+
 ## 7.1 Herencia: todo es `final` por defecto
 
 En Kotlin las clases **no se pueden heredar** salvo que se marquen como `open`.
