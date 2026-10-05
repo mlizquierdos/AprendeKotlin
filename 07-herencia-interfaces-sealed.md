@@ -36,6 +36,8 @@ class Alumno(nombre: String, val curso: Int) : Persona(nombre) {
 
 ## 7.2 Clases abstractas
 
+Pensad en `Figura`. Existen círculos, rectángulos, triángulos… pero **no existe «una figura a secas»**: ¿qué área tendría? Una clase abstracta es una plantilla **incompleta a propósito**: define lo que todas las hijas comparten y deja **huecos** que cada hija *está obligada* a rellenar.
+
 ```kotlin
 abstract class Figura(val nombre: String) {
     abstract fun area(): Double                 // sin cuerpo: obliga a implementarla
@@ -50,6 +52,10 @@ class Circulo(val radio: Double) : Figura("Círculo") {
 `abstract` implica `open`: no hace falta escribir ambos.
 
 ## 7.3 Interfaces
+
+La herencia responde a *«¿qué **es**?»*. Una interfaz responde a *«¿qué **sabe hacer**?»*: es un **contrato**, una lista de capacidades que una clase promete tener. Piensa en un carnet de conducir: no dice quién eres, dice qué puedes hacer.
+
+Una `Cancion`, un `Video` y un `Podcast` no son «parientes», pero los tres **se pueden reproducir**. Esa capacidad común es la interfaz `Reproducible`.
 
 ```kotlin
 interface Reproducible {
