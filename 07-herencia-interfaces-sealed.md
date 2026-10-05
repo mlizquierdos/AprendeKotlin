@@ -73,6 +73,8 @@ Una clase puede implementar **varias** interfaces pero heredar de **una sola** c
 
 ## 7.4 `object`: el Singleton del lenguaje
 
+A veces no necesitas una plantilla para **crear muchos** objetos, sino **un único objeto** que exista durante toda la aplicación: la configuración, un registro de mensajes, un gestor. En Kotlin lo declaras con `object` y el propio lenguaje crea esa única instancia por ti.
+
 ```kotlin
 // Instancia única, creada de forma perezosa y segura frente a hilos.
 object ConfiguracionApp {
@@ -81,11 +83,16 @@ object ConfiguracionApp {
 }
 
 ConfiguracionApp.tema = "oscuro"
+println(ConfiguracionApp.tema)
+ConfiguracionApp.reiniciar()
+println(ConfiguracionApp.tema)
 ```
 
 Sustituye al patrón Singleton escrito a mano en Java (constructor privado + instancia estática).
 
 ### `companion object`: los miembros estáticos
+
+Kotlin no tiene la palabra `static`. Lo que en Java sería estático (constantes, funciones que no dependen de un objeto concreto) se coloca en un **`companion object`**, dentro de la clase:
 
 ```kotlin
 class Alumno(val nombre: String) {
@@ -100,6 +107,8 @@ val a = Alumno.desdeCsv("Ana;8.5")     // patrón factoría
 ```
 
 ## 7.5 `enum class`
+
+Cuando una variable solo puede valer **una de unas pocas opciones conocidas** (días de la semana, estado de una corrección…), usar un `String` o un `Int` invita a errores: `"APROBADO"`, `"Aprobado"`, `"aprovado"`. Con un `enum`, el compilador **solo acepta las opciones que tú hayas definido**.
 
 ```kotlin
 enum class Estado(val descripcion: String) {
@@ -138,6 +147,12 @@ fun mostrar(resultado: Resultado<List<String>>) = when (resultado) {
 > Lo reutilizaremos en la unidad 10: una pantalla está cargando, tiene datos o ha fallado.
 
 ## 7.7 Delegación
+
+La herencia no siempre es la solución. Imaginad una secretaria que atiende llamadas: la mayoría las pasa al jefe tal cual, y en algunas añade algo (apunta la hora). La secretaria **no es** el jefe: **colabora** con él y le **reenvía** el trabajo.
+
+Eso es delegar. En vez de heredar de otra clase, tu clase **recibe un objeto** y le reenvía lo que no quiere hacer por sí misma. En diseño de software se resume como **«prefiere composición a herencia»**: una relación «**tiene un**» (un coche *tiene un* motor) en lugar de «**es un**».
+
+Hacerlo a mano obliga a escribir un método de reenvío por cada función de la interfaz, algo muy aburrido. Kotlin lo automatiza con la palabra `by`.
 
 ```kotlin
 interface Repositorio { fun listar(): List<String> }
