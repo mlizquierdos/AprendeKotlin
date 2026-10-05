@@ -21,6 +21,7 @@ El objetivo es llegar a Android Studio con una base sólida de Kotlin, partiendo
 | [05](05-colecciones.md) | Listas, mapas, conjuntos y operadores funcionales | práctica |
 | [06](06-poo-clases-y-data-class.md) | Clases, constructores, propiedades, `data class` | concepto |
 | ↳ [val vs var](val-vs-var.md) | Ampliación: `val`/`var`, mutabilidad de objetos, arrays, comparación con Java | complementario |
+| ↳ [Excepciones](excepciones.md) | Ampliación: `throw`, `try/catch`, sin excepciones comprobadas, `require`/`check`, excepciones propias, `use` | complementario |
 | [07](07-herencia-interfaces-sealed.md) | Herencia, interfaces, `object`, `enum`, `sealed class` | concepto |
 | [08](08-extensiones-y-scope-functions.md) | Funciones de extensión y `let/run/with/apply/also` | concepto |
 | [09](09-corrutinas.md) | Concurrencia: `suspend`, `launch`, `async`, `Dispatchers` | concepto |

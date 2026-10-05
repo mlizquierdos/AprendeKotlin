@@ -22,6 +22,10 @@ a.nota = 9.0
 
 Ese código equivale a unas 30 líneas de Java con constructor, campos privados, *getters* y *setters*.
 
+> 📄 `require` comprueba una condición y, si no se cumple, **lanza una excepción** (`IllegalArgumentException`).
+> Todavía no hemos visto cómo funcionan en Kotlin: leed [Excepciones en Kotlin](excepciones.md)
+> para entender qué hace exactamente y en qué se diferencia de `check` y `error`.
+
 ## 6.2 Propiedades con lógica
 
 ```kotlin
