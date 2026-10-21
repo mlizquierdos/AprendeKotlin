@@ -117,7 +117,7 @@ Salida:
 22.0
 ```
 
-Con `porcentajeInt / 100` la subida es **siempre 0** para cualquier porcentaje menor que 100, y el programa no da ningún error: simplemente calcula mal. Para un 150 %, `150 / 100` da `1` y la subida sería del 100 %, no del 150 %.
+Con `porcentajeInt / 100` la salida es **siempre 0** para cualquier porcentaje menor que 100, y el programa no da ningún error: simplemente calcula mal. Para un 150 %, `150 / 100` da `1` y la salida sería del 100 %, no del 150 %.
 
 Tres formas de evitarlo:
 
